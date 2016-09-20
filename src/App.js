@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'aframe';
+import {Scene, Entity, Sky} from 'aframe-react'
+
 
 class App extends Component {
   render() {
@@ -13,6 +16,14 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Scene>
+          <Entity geometry={{primitive:'sphere', radius: 10}}
+           material={{color:'red'}}
+           position={[0,0,-50]}/>
+          <Entity camera geometry={{primitive:'sphere', radius: 10}}
+           material={{color:'red'}}
+           position={[0,0,0]}/>
+        </Scene>
       </div>
     );
   }
