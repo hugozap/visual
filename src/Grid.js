@@ -15,7 +15,6 @@ export default class Grid extends Component {
     spaceBetween: React.PropTypes.number,
     cols: React.PropTypes.number.isRequired,
     levels: React.PropTypes.number.isRequired,
-    material: React.PropTypes.object,
     colors: React.PropTypes.array
   };
 
