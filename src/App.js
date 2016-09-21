@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import '../node_modules/webcomponents.js/webcomponents-lite.js'
 import 'aframe';
 import 'aframe-extras';
 import {Scene, Entity, Sky} from 'aframe-react'
@@ -9,6 +10,7 @@ import '../node_modules/tachyons/css/tachyons.css'
 import BasicScene from './scenes/basic.js'
 import GridScene from './scenes/gridscene.js'
 import GridScene2 from './scenes/gridscene2.js'
+import GifGridScene from './scenes/GifGridScene.js'
 
 class App extends Component {
   
@@ -123,6 +125,8 @@ class App extends Component {
           <GridScene2/>
         </SceneContainer>
 
+        <h2> Gif grid</h2>
+        <GifGridScene/>
 
       </div>
     );
