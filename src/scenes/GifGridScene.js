@@ -46,11 +46,11 @@ export default class GifGridScene extends React.Component {
         <GifGrid position={[0,0,-90]}
               primitive={'box'}
               rotation={[0, 45, 0]}
-              size={10}
-              rows={5}
+              size={100}
+              rows={4}
               cols={4}
-              levels={4}
-              spaceBetween={5}
+              levels={1}
+              spaceBetween={50}
               textures={this.state.gifRefs}
         />
       </SceneContainer>
