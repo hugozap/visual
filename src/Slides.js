@@ -37,6 +37,10 @@ class Slides extends Component {
                 <div>
                   @hugozap
                 </div>
+                <div className="mt3">
+                  <span>Código: </span>
+                  <a className="link" href="https://github.com/hugozap/visual">https://github.com/hugozap/visual</a>
+                </div>
               </div>
             </div>
           </Slide>
