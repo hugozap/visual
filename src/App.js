@@ -3,6 +3,8 @@ var React = require('react'),
     SphereScene = require('./scenes/Spheres.js').default,
     BasicScene = require('./scenes/basic.js').default,
     SceneContainer = require('./SceneContainer.js').default,
+    GridScene1 = require('./scenes/gridscene.js').default,
+    GridScene2 = require('./scenes/gridscene2.js').default,
     RouterMixin = require('react-mini-router').RouterMixin;  
    
 var App = React.createClass({
@@ -12,7 +14,9 @@ var App = React.createClass({
     routes: {
         '/': 'home',
         '/message/:text': 'message',
-        '/basic_aframe': 'basic_aframe'
+        '/basic_aframe': 'basic_aframe',
+        '/grid1':'grid1',
+        '/grid2':'grid2',
     },
 
     render: function() {
@@ -35,6 +39,15 @@ var App = React.createClass({
 
     basic_aframe: function() {
         return <BasicScene/>
+    },
+    grid1: function() {
+              
+       return <GridScene1/>
+    },
+
+    grid2: function() {
+              
+       return <GridScene2/>
     }
 
 });

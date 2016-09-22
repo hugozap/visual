@@ -8,7 +8,7 @@ export default class Grid extends Component {
 
   static propTypes = {
     position: React.PropTypes.array.isRequired,
-    rotation: React.PropTypes.string,
+    rotation: React.PropTypes.array,
     size: React.PropTypes.number,
     primitive: React.PropTypes.string,
     rows: React.PropTypes.number.isRequired,
@@ -63,7 +63,7 @@ export default class Grid extends Component {
     const boxsize = this.state.size
     return (
         
-          <Entity position={this.props.position} rotation={this.props.rotation || '0 0 0'}> 
+          <Entity position={this.props.position} rotation={this.props.rotation || [0,0,0]}> 
             {this.state.points.map((p,ix) => {
             return (
               <Entity key={ix} geometry={{primitive: this.props.primitive, radius:this.props.size, width:this.props.size, height: this.props.size, depth: this.props.size}} material={{color: p.color}} position={[p.x, p.y, p.z]}/>

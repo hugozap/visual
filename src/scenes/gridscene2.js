@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '../Grid.js'
 
-const GridScene = (props) => {
+const GridScene2 = (props) => {
     const colors = ["#6377c8",
                     "#45b7ba",
                     "#ac57c3",
@@ -9,7 +9,7 @@ const GridScene = (props) => {
                     "#c587c3"]
 
     return (
-      <a-entity>
+      <a-scene embedded style={{height:400}}>
         <Grid position={[0,0,-90]}
               primitive={'box'}
               rotation={[0, 45, 0]}
@@ -21,11 +21,11 @@ const GridScene = (props) => {
               spaceBetween={1}
         />
         <a-entity camera position="0 0 0" wasd-controls="acceleration:500"/>
-      </a-entity>
+      </a-scene>
     
        )
 }
 
 
 
-export default GridScene
+export default GridScene2

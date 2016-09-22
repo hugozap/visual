@@ -170,101 +170,67 @@ class Slides extends Component {
               </pre>
             </div>
           </div>
-          
-
+        
         </Slide>
-        
-        
-        <h2> Escena básica (setup a-frame) </h2>
-        
-        <hr/>
-        <h2> Componentes a-frame como atributos</h2>
 
-        
-        <pre className="tl p2">
-         {`
-           <a-entity>
-             <a-entity geometry="primitive:sphere;radius:10"
-              material="color:red"
-              position="0 0 -50"/>
-
-              <a-entity geometry="primitive:sphere;radius:10"
-               material="color:#CCFF66"
-               position="10 0 -50"/>
-
-               <a-entity geometry="primitive:sphere;radius:10"
-                material="color:red"
-                position="20 0 -50"/>
-
-             <a-entity camera look-controls position="0 0 0"/>
-           </a-entity>
-        `}
-        </pre>
-       
-
-        (Use el mouse para rotar la cámara)
-        <SceneContainer height={400}>
-          <a-entity>
-            <a-entity geometry="primitive:sphere;radius:10"
-             material="color:red"
-             position="0 0 -50"/>
-
-             <a-entity geometry="primitive:sphere;radius:10"
-              material="color:#CCFF66"
-              position="10 0 -50"/>
-
-              <a-entity geometry="primitive:sphere;radius:10"
-               material="color:red"
-               position="20 0 -50"/>
-
-            <a-entity camera look-controls position="0 0 0"/>
-          </a-entity>
-        </SceneContainer>
-
-        <h2>Ej Componente React (Grid)</h2>
-
-        <pre className="tl p2">
-          {`
-            <a-entity>
-            <Grid position={[0,0,-80]}
+        <Slide>
+          <h1 className="f1">Usando <span className="strike">DOM</span> WebGL y 3D como vista</h1>
+          <div className="dt">
+            <div className="dtc">
+              <iframe src="/grid1" width="100%" height="400px" frameBorder="0"></iframe>
+            </div>
+            <div className="dtc v-top">
+              <h2> Componentes a-frame como atributos</h2>
+              <pre className="tl p2">
+              {`
+                <Grid position={[0,-20,-70]}
                   primitive={'sphere'}
                   rotation={[0, 45, 0]}
-                  size={20}
+                  size={10}
                   rows={4}
                   cols={4}
                   levels={4}
                   colors={colors}
-            />
-            <a-entity camera position="0 0 0"/>
-          </a-entity>`}
-        </pre>
-        <SceneContainer height={600}>
-          <GridScene/>
-        </SceneContainer>
+                />
+              `}
+              </pre>
+            </div>
+          </div>
+        </Slide>
 
-        <h2>wasd-controls</h2>
-        <pre className="tl p2">
-          {`
-            <a-entity>
-              <Grid position={[0,0,-80]}
-                    primitive={'box'}
-                    rotation={[0, 45, 0]}
-                    size={10}
-                    rows={5}
-                    cols={5}
-                    levels={5}
-                    colors={colors}
-              />
-              <a-entity camera position="0 0 0" wasd-controls="acceleration:500"/>
-            </a-entity>
-          `}
-        </pre>
-        <SceneContainer height={600}>
-          <GridScene2/>
-        </SceneContainer>
+        <Slide>
+          <h1 className="f1">Usando <span className="strike">DOM</span> WebGL y 3D como vista</h1>
+          <div className="dt">
+            <div className="dtc">
+              <iframe src="/grid2" width="100%" height="400px" frameBorder="0"></iframe>
+            </div>
+            <div className="dtc v-top">
+              <h2> Componentes a-frame como atributos</h2>
+              <pre className="tl p2">
+              {`
+                <a-scene embedded style={{height:400}}>
+                <Grid position={[0,0,-90]}
+                      primitive={'box'}
+                      rotation={[0, 45, 0]}
+                      size={10}
+                      rows={4}
+                      cols={4}
+                      levels={4}
+                      colors={colors}
+                      spaceBetween={1}
+                />
+                <a-entity camera position="0 0 0" wasd-controls="acceleration:500"/>
+              </a-scene>
+              `}
+              </pre>
+            </div>
+          </div>
+        </Slide>
 
-        <h2> Gif grid</h2>
-        <GifGridScene/>
+        <Slide>
+          <h2> Gif grid</h2>
+          <GifGridScene/>
+        </Slide>
 
       </div>
     );

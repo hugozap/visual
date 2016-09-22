@@ -9,8 +9,8 @@ const GridScene = (props) => {
                   "#8962cd"]
 
     return (
-      <a-entity>
-        <Grid position={[0,0,-80]}
+      <a-scene embedded style={{height:600}}>
+        <Grid position={[0,-20,-70]}
               primitive={'sphere'}
               rotation={[0, 45, 0]}
               size={10}
@@ -20,7 +20,7 @@ const GridScene = (props) => {
               colors={colors}
         />
         <a-entity camera position="0 0 0"/>
-      </a-entity>
+      </a-scene>
     
        )
 }
