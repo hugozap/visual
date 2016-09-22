@@ -1,4 +1,6 @@
 import React from 'react';
+import restyle from 'restyle';
+
 
 export default class Slide extends React.Component {
   static propTypes = {
@@ -11,7 +13,7 @@ export default class Slide extends React.Component {
 
   render() {
     return (
-      <div className="vh-100 w-100">
+      <div className={this.props.className}>
         {this.props.children}
       </div>
     );
