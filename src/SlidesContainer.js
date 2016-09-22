@@ -9,7 +9,7 @@ export default class SlidesContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 0
+      index: 9
     }
 
   restyle({

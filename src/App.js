@@ -17,6 +17,7 @@ var App = React.createClass({
         '/basic_aframe': 'basic_aframe',
         '/grid1':'grid1',
         '/grid2':'grid2',
+        '/spheres':'spheres',
     },
 
     render: function() {
@@ -48,6 +49,10 @@ var App = React.createClass({
     grid2: function() {
               
        return <GridScene2/>
+    },
+
+    spheres: () => {
+        return <SphereScene/>
     }
 
 });

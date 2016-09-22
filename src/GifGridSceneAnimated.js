@@ -9,7 +9,7 @@ import g5 from '../img/5.gif'
 import g6 from '../img/6.gif'
 
 
-export default class GifGridScene extends React.Component {
+export default class GifGridSceneAnimated extends React.Component {
   static propTypes = {
     name: React.PropTypes.string,
   };
@@ -17,6 +17,7 @@ export default class GifGridScene extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedIndex:4,
       gifs:[
         {id:'img1', url:g1},
         {id:'img2', url:g2},
@@ -52,6 +53,7 @@ export default class GifGridScene extends React.Component {
               levels={1}
               spaceBetween={1}
               textures={this.state.gifRefs}
+              selectedIndex={this.state.selectedIndex}
         />
          <a-entity camera position="10 20 -10a" look-controls wasd-controls="acceleration:500"/>
 

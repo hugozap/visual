@@ -71,10 +71,16 @@ export default class GifGrid extends Component {
         
           <Entity position={this.props.position} rotation={this.props.rotation || [0,0,0]}> 
             {this.state.points.map((p,ix) => {
-              const z = (ix === this.props.selectedIndex) ? p.z + 10 : p.z;
-            return (
-              <Entity key={ix} geometry={{primitive: this.props.primitive, radius:this.props.size, width:this.props.size, height: this.props.size, depth: this.props.size}}
-               material={{shader:'gif',src: p.texture}} position={[p.x, p.y, z]}/>
+                const zPos = (ix === this.props.selectedIndex) ? p.z + 10 : p.z;
+                return (
+                <Motion defaultStyle={{z:0}} style={{z:spring(zPos)}}>
+                    {(val) => 
+                        <Entity key={ix} geometry={{primitive: this.props.primitive, radius:this.props.size, width:this.props.size, height: this.props.size, depth: this.props.size}}
+                        material={{shader:'gif',src: p.texture}} position={[p.x, p.y, val.z]}/>
+                    }
+                    
+                </Motion>
+
              )
             })}
           </Entity>

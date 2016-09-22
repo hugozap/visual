@@ -9,8 +9,8 @@ const GridScene2 = (props) => {
                     "#c587c3"]
 
     return (
-      <a-scene embedded style={{height:400}}>
-        <Grid position={[0,0,-90]}
+      <a-scene embedded style={{height:600}} >
+        <Grid position={[0,0,-50]}
               primitive={'box'}
               rotation={[0, 45, 0]}
               size={10}
@@ -20,7 +20,7 @@ const GridScene2 = (props) => {
               colors={colors}
               spaceBetween={1}
         />
-        <a-entity camera position="0 0 0" wasd-controls="acceleration:500"/>
+        <a-entity camera position="20 20 10" wasd-controls="acceleration:500"/>
       </a-scene>
     
        )
