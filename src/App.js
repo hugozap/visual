@@ -1,6 +1,8 @@
 var React = require('react'),
     Slides = require('./Slides.js').default,
     SphereScene = require('./scenes/Spheres.js').default,
+    BasicScene = require('./scenes/basic.js').default,
+    SceneContainer = require('./SceneContainer.js').default,
     RouterMixin = require('react-mini-router').RouterMixin;  
    
 var App = React.createClass({
@@ -10,7 +12,7 @@ var App = React.createClass({
     routes: {
         '/': 'home',
         '/message/:text': 'message',
-        '/test': 'test'
+        '/basic_aframe': 'basic_aframe'
     },
 
     render: function() {
@@ -31,8 +33,8 @@ var App = React.createClass({
         return <Slides/>;
     },
 
-    test: function() {
-        return  <SphereScene/>
+    basic_aframe: function() {
+        return <BasicScene/>
     }
 
 });

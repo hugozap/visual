@@ -13,6 +13,7 @@ import GridScene2 from './scenes/gridscene2.js'
 import GifGridScene from './scenes/GifGridScene.js'
 import SpheresScene from './scenes/Spheres.js'
 import Slide from './Slide.js'
+import functional_ui from './img/functional_ui.png'
 
 class Slides extends Component {
   
@@ -32,7 +33,7 @@ class Slides extends Component {
         </Slide>
 
         <Slide>
-          <h1 className="f1">Motivación</h1>
+          <h1 className="f1">El impacto de nuestras interfaces</h1>
           <p>Re-pensar cómo influyen nuestras interfaces en los usuarios de la Web</p>
           <h2 className="f2">Oportunidades</h2>
           <ul>
@@ -97,40 +98,85 @@ class Slides extends Component {
                 <li>Basadas en modelos de física (Springs)</li>
               </ul>
             </div>
-          </div>
-          
-
-           </Slide>
-
-        <Slide>
-          <h1 className="f2">También podemos animar la cámara</h1>
-          <iframe src="http://hugozap.neocities.org/x99/" width="100%" height="400px" frameBorder="0"></iframe>
+          </div>   
 
         </Slide>
 
         <Slide>
+          <div className="dt w-100 h-100">
+            <div className="dtc w-25">
+              <iframe src="http://hugozap.neocities.org/x99/" width="100%" height="400px" frameBorder="0"></iframe>
+            </div>
+            <div className="dtc w-75 v-top">
+               <h1 className="f2">Animación basada en física (springs)</h1>
+               <p className="quote">
+               For 95% of use-cases of animating components, 
+               we don't have to resort to using hard-coded easing curves and duration.
+               Set up a stiffness and damping for your UI element,
+               and let the magic of physics take care of the rest.
+               <s className="bold">Cheng Lou (Autor de React-Motion)</s>
+              </p>
+               <ul>
+                 <li>Basada en el modelo matemático</li>
+                 <li>Parámetros: Rigidez, elasticidad </li>
+                 <li>Parámetros: Rigidez, elasticidad </li>
+                 <li>NO establecemos duración (esto afectaría el realismo de la animación) </li>
+               </ul>
+               <a href="http://chenglou.github.io/react-motion/demos/demo5-spring-parameters-chooser/">Spring Parameters chooser</a>
+            </div>
+          </div>
+        </Slide>
+
+        <Slide>
           <h1 className="f2">Paradigma Funcional En UI</h1>
+          <img src={functional_ui} alt="UI Funcional"/>
+          <p>En la Web es Popularizado por React</p>
+          <p className="quote">
+            A diferencia del modelo tradicional, con este enfoque
+            NO modificamos la UI directamente. Solo podemos modificar
+            el estado y dejamos que el sistema actualice la vista.
+          </p>
+
+          <ul>
+            <li>Separación clara del estado y la vista</li>
+            <li>Facilita la composición de elementos de UI</li>
+            <li>Podemos re-crear la vista a partir del estado en cualquier momento.</li>
+            <li>Es más fácil de razonar!</li>
+            <li>Es más divertido</li>
+          </ul>
+
+        </Slide>
+
+        <Slide>
+          <h1 className="f1">Usando <span className="strike">DOM</span> WebGL y 3D como vista</h1>
+          <div className="dt">
+            <div className="dtc">
+              <iframe src="/basic_aframe" width="100%" height="400px" frameBorder="0"></iframe>
+            </div>
+            <div className="dtc v-top">
+              <p className="f2">
+                Mozilla A-Frame: VR y 3D declarativo
+              </p>
+              <pre className="tl p2 f3">
+               {`
+                 <a-entity>
+                   <a-entity geometry="primitive:sphere;radius:10"
+                    material="color:red"
+                    position="0 0 -50"/>
+
+                   <a-entity camera position="0 0 0"/>
+                 </a-entity>
+              `}
+              </pre>
+            </div>
+          </div>
+          
 
         </Slide>
         
         
         <h2> Escena básica (setup a-frame) </h2>
-        <pre className="tl p2">
-         {`
-           <a-entity>
-             <a-entity geometry="primitive:sphere;radius:10"
-              material="color:red"
-              position="0 0 -50"/>
-
-             <a-entity camera position="0 0 0"/>
-           </a-entity>
-        `}
-        </pre>
         
-
-        <SceneContainer height={400}>
-          <BasicScene/>
-        </SceneContainer>
         <hr/>
         <h2> Componentes a-frame como atributos</h2>
 
